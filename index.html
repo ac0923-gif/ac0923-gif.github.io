@@ -4,151 +4,93 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Avery Carlyle — GIS Portfolio</title>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<style>
-:root{--ink:#1b2a33;--bg:#f6f7f5;--card:#fff;--line:#d9ded8;--accent:#4a6b52}
-*{box-sizing:border-box}
-body{margin:0;font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--bg)}
-.wrap{max-width:820px;margin:0 auto;padding:20px}
-header{background:var(--accent);color:#fff;padding:28px 20px}
-header h1{margin:0;font-size:1.7rem}
-header p{margin:6px 0 0;opacity:.95}
-h2{font-size:1.2rem;margin:28px 0 10px;border-bottom:2px solid var(--line);padding-bottom:5px}
-h3{font-size:1rem;margin:14px 0 4px}
-details{background:var(--card);border:1px solid var(--line);border-radius:8px;margin:10px 0;padding:10px 14px}
-summary{cursor:pointer;font-weight:600}
-summary span{display:block;font-weight:400;font-size:.88rem;color:#5c6b63}
-dt{font-weight:600;margin-top:10px}
-dd{margin:2px 0 0}
-ul{margin:6px 0;padding-left:20px}
-.map{height:300px;border:1px solid var(--line);border-radius:8px;margin-top:12px}
-.frame{position:relative;padding-top:70%;margin-top:12px}
-.frame iframe{position:absolute;inset:0;width:100%;height:100%;border:1px solid var(--line);border-radius:8px}
-.add{background:#fff3cd;padding:0 4px;border-radius:3px;font-size:.9em}
-.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px 14px}
-.tags{display:flex;flex-wrap:wrap;gap:6px;padding:0;list-style:none;margin:6px 0 0}
-.tags li{background:#eaefe8;border-radius:12px;padding:3px 10px;font-size:.85rem}
-.note{font-size:.88rem;color:#5c6b63}
-footer{padding:18px 20px;font-size:.85rem;color:#5c6b63;text-align:center}
-a{color:var(--accent)}
-@media(max-width:480px){.wrap{padding:14px}.map{height:240px}.frame{padding-top:100%}}
-</style>
+<meta name="description" content="Portfolio of Avery Carlyle, Geographic Information Science &amp; Technology student at Texas A&amp;M University.">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <div class="wrap" style="padding:0">
-    <h1>Avery Carlyle</h1>
-    <p>Looking for work in the geospatial field — mainly in the Utility Network sector.</p>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <h1 class="site-title"><a href="index.html">Avery Carlyle</a></h1>
+    <p class="tagline">Looking for work in the geospatial field — mainly in the Utility Network sector.</p>
+    <nav aria-label="Main menu">
+      <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="resume.html">Resume</a></li>
+      </ul>
+    </nav>
   </div>
 </header>
 
-<div class="wrap">
+<main id="main" class="wrap">
 
-<section id="about">
-  <h2>About</h2>
-  <div class="card">
-    <p>I am a graduating GIST student at Texas A&amp;M University. I have skills in ArcGIS Enterprise, ENVI,
-    geodatabases, and more. Skills include utility network management, template creation, and more.</p>
-    <p>Geographic Information Science &amp; Technology student at Texas A&amp;M University with professional
-    experience supporting GIS data management, utility network documentation, template development, and team
-    deliverables. Experienced with ArcGIS Pro, ArcGIS Enterprise, FME, and introductory Python, with strengths
-    in organization, communication, documentation, and collaborative project support.</p>
-    <p>College Station, TX</p>
-  </div>
-</section>
-
-<section id="projects">
-  <h2>Projects</h2>
-  <p class="note">Tap a project to expand it. Titles and write-ups were not included in the source document.</p>
-
-  <details>
-    <summary>Median Household Income & Lava Hazard Analysis <span><span class="add">[ADD]</span> project title, date, and tools</span></summary>
-    <dl>
-      <dt>Problem</dt>
-      <dd><span class="add">[ADD]</span></dd>
-      <dt>What I did</dt>
-      <dd><span class="add">[ADD]</span></dd>
-      <dt>What I found</dt>
-      <dd><span class="add">[ADD]</span></dd>
-      <dt>What I would do differently</dt>
-      <dd><span class="add">[ADD]</span></dd>
-    </dl>
-    <h3>StoryMap</h3>
-    <div class="frame">
-      <iframe src="https://storymaps.arcgis.com/stories/2f87305682394788b83b5610e1193d41"
-        title="ArcGIS StoryMap — Project 1" loading="lazy" allowfullscreen></iframe>
+  <section id="intro">
+    <h2>Welcome</h2>
+    <div class="card">
+      <p>I am a graduating GIST student at Texas A&amp;M University. I have skills in ArcGIS Enterprise, ENVI,
+      geodatabases, and more. Skills include utility network management, template creation, and more.</p>
+      <p class="card-meta">College Station, TX</p>
+      <p><a class="btn" href="projects.html">View my projects</a></p>
     </div>
-    <p><a href="https://storymaps.arcgis.com/stories/2f87305682394788b83b5610e1193d41" target="_blank" rel="noopener">Open StoryMap in a new tab</a></p>
+  </section>
 
-    <h3>Interactive map</h3>
-    <p class="note"><span class="add">[ADD]</span> point coordinates and labels in the <code>MAP_POINTS</code>
-    array at the bottom of this file. No coordinates were provided, so the map currently opens with no markers.</p>
-    <div id="map1" class="map"></div>
-  </details>
-
-  <details>
-    <summary>Valles Caldera National Preserve <span><span class="add">[ADD]</span> project title, date, and tools</span></summary>
-    <dl>
-      <dt>Problem</dt>
-      <dd><span class="add">[ADD]</span></dd>
-      <dt>What I did</dt>
-      <dd><span class="add">[ADD]</span></dd>
-      <dt>What I found</dt>
-      <dd><span class="add">[ADD]</span></dd>
-      <dt>What I would do differently</dt>
-      <dd><span class="add">[ADD]</span></dd>
-    </dl>
-    <h3>StoryMap</h3>
-    <p class="note"><span class="add">[ADD]</span> StoryMap or ArcGIS Online link for Project 2 — no separate
-    link was listed under this project in the source document.</p>
-  </details>
-
-  <details>
-    <summary>The Great New York Blizzard<span><span class="add">[ADD]</span> project title, date, and tools</span></summary>
-    <dl>
-      <dt>Problem</dt>
-      <dd><span class="add">[ADD]</span></dd>
-      <dt>What I did</dt>
-      <dd><span class="add">[ADD]</span></dd>
-      <dt>What I found</dt>
-      <dd><span class="add">[ADD]</span></dd>
-      <dt>What I would do differently</dt>
-      <dd><span class="add">[ADD]</span></dd>
-    </dl>
-    <h3>StoryMap</h3>
-    <div class="frame">
-      <iframe src="https://storymaps.arcgis.com/stories/cb413f28209046e5a13b0af44d702662"
-        title="ArcGIS StoryMap — Project 3" loading="lazy" allowfullscreen></iframe>
+  <section id="featured">
+    <h2>Featured project</h2>
+    <div class="card featured">
+      <h3>Project 1 — <span class="add">[ADD]</span> project title</h3>
+      <p class="card-meta"><span class="add">[ADD]</span> date and tools used</p>
+      <p><span class="add">[ADD]</span> one- or two-sentence summary of this project: what question it
+      answered and what you produced.</p>
+      <p>
+        <a class="more" href="project-1.html">Read the full project page &rarr;</a>
+      </p>
     </div>
-    <p><a href="https://storymaps.arcgis.com/stories/cb413f28209046e5a13b0af44d702662" target="_blank" rel="noopener">Open StoryMap in a new tab</a></p>
-  </details>
-</section>
+    <p class="note">
+      This project is published as an ArcGIS StoryMap:
+      <a href="https://storymaps.arcgis.com/stories/2f87305682394788b83b5610e1193d41" target="_blank" rel="noopener">view the StoryMap</a>.
+    </p>
+  </section>
 
-<section id="resume">
-  <h2>Resume</h2>
-  <div class="card">
-    <h3>Education</h3>
-    <p>Texas A&amp;M University — College Station, TX — December 2026<br>
-    B.S. in Geographic Information Science &amp; Technology (GIST) · Program GPA: 3.36</p>
+  <section id="skills-snapshot">
+    <h2>Tools I work with</h2>
+    <div class="card">
+      <h3>GIS &amp; data</h3>
+      <ul class="tags">
+        <li>ArcGIS Pro</li>
+        <li>ArcGIS Enterprise</li>
+        <li>ArcGIS Online</li>
+        <li>FME</li>
+        <li>Database creation/management</li>
+        <li>Data management</li>
+      </ul>
+      <h3>Programming</h3>
+      <ul class="tags">
+        <li>Python</li>
+        <li>R Studio</li>
+        <li>Java</li>
+      </ul>
+      <h3>Software</h3>
+      <ul class="tags">
+        <li>Microsoft Excel</li>
+        <li>Microsoft Word</li>
+        <li>Google Workspace</li>
+        <li>JIRA</li>
+        <li>SharePoint</li>
+      </ul>
+      <p><a href="resume.html">See full resume &rarr;</a></p>
+    </div>
+  </section>
 
-    <h3>GIS Intern — TRC Companies (WSP) · May 2026 – Present</h3>
-    <ul>
-      <li>Support professional GIS consulting teams with Electric and Gas utility network data management and documentation for client infrastructure projects.</li>
-      <li>Create and maintain master sheets that organize utility network devices and associated project information.</li>
-      <li>Test and create templates in ArcGIS Pro to support consistent team workflows and project deliverables.</li>
-      <li>Track products and deliverables produced by the team to help maintain organization, visibility, and project continuity.</li>
-      <li>Use ArcGIS Pro and ArcGIS Enterprise for GIS data management and project work, with introductory FME and Python as needed.</li>
-      <li>Collaborate with experienced GIS professionals through team meetings, communication, and day-to-day project support.</li>
-    </ul>
+</main>
 
-    <h3>Supervisor — Texas A&amp;M Rec Sports · December 2022 – August 2026</h3>
-    <ul>
-      <li>Coordinated intramural operations by scheduling activities, setting up facilities, and assigning staff to appropriate responsibilities.</li>
-      <li>Communicated with staff and participants while supporting smooth, organized operations during shifts.</li>
-      <li>Helped lead student staff and manage day-to-day tasks in a fast-paced campus recreation environment.</li>
-    </ul>
+<footer class="site-footer">
+  <p>Avery Carlyle &middot; College Station, TX &middot;
+    <a href="mailto:ac0923@tamu.edu">ac0923@tamu.edu</a></p>
+</footer>
 
-    <h3>Selected Academic Projects</h3>
-    <ul>
-      <li><strong>Hydrology and Precipitation Analysis</strong> (March 2025) — Used ArcGIS Online to analyze precipitation amounts and means across river
+</body>
+</html>
