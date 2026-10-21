@@ -31,31 +31,28 @@
 
   <p class="note"><a href="projects.html">&larr; Back to all projects</a></p>
 
-  <h2 class="page-title">Project 1 — <span class="add">[ADD]</span> project title</h2>
-  <p class="card-meta"><span class="add">[ADD]</span> course or client &middot;
-    <span class="add">[ADD]</span> date &middot;
-    <span class="add">[ADD]</span> tools used</p>
+  <h2 class="page-title">Project 1 — <span class="add">Median Household Income and its Association with Lava Flow Hazard in Hawaii</span></h2>
+  <p class="card-meta"><span class="add">GEOG 395 (Cartography and Visualization)</span> &middot;
+    <span class="add">May 2026</span> &middot;
+    <span class="add">ArcGIS Pro, ArcGIS Online, ArcGIS StoryMaps</span></p>
 
   <section id="overview">
     <div class="card featured">
-      <p><span class="add">[ADD]</span> a two- or three-sentence overview of this project for a reader
-      who will not scroll further: the question, the study area, and the final product.</p>
+      <p><span class="add">This project covers lava flow hazard in Hawaii County, Hawaii, and outputs maps displaying the relationship between risk and income. It attempts to discover a relationship between lower median household income in Hawaii and susceptibility to lava hazards.</span></p>
     </div>
   </section>
 
   <section id="problem">
     <h2>The problem</h2>
     <div class="card">
-      <p><span class="add">[ADD]</span> What question or need did this project address? Who needed the
-      answer, and why did it matter?</p>
+      <p><span class="add">The question is: Is there a correlation between communities who are susceptible to a larger risk of lava flow and their income?</span></p>
     </div>
   </section>
 
   <section id="role">
     <h2>My role</h2>
     <div class="card">
-      <p><span class="add">[ADD]</span> What you personally did. If this was a group project, state which
-      parts were yours and how many people were on the team. If you worked alone, say so.</p>
+      <p><span class="add">This project was individually completed.</span></p>
     </div>
   </section>
 
@@ -64,18 +61,18 @@
     <div class="card">
       <h3>Data</h3>
       <ul>
-        <li><span class="add">[ADD]</span> dataset name, source, and date</li>
-        <li><span class="add">[ADD]</span> coordinate system / projection</li>
-        <li><span class="add">[ADD]</span> any additional layers used</li>
+        <li><span class="add">Hawaii Lava Flow Hazard Zones, Hawaii Emergency Shelters, and Global Volcanoes datasets (ArcGIS REST Feature Services)</span></li>
+        <li><span class="add">ArcGIS Median Household Income and Population Density layers</span></li>
+        <li><span class="add">Media and image sources: Hawaii Volcanoes Of The Big Island, Britannica, Honolulu Civil Beat, and The New Yorker</span></li>
       </ul>
 
       <h3>Method</h3>
       <ol>
-        <li><span class="add">[ADD]</span> first step — data acquisition and preparation</li>
-        <li><span class="add">[ADD]</span> second step — the analysis or workflow you ran</li>
-        <li><span class="add">[ADD]</span> third step — how you symbolized, validated, or published the result</li>
+        <li><span class="add">Data acquisition and preparation</span></li>
+        <li><span class="add">Analyze data to make it fit for study (selecting relevant layers, evaluating data reliability and importance)</span></li>
+        <li><span class="add">Symbolization and validation of data</span></li>
+        <li><span class="add">Publish data and create narrative in ArcGIS StoryMaps</span></li>
       </ol>
-      <p class="note"><span class="add">[ADD]</span> any models, scripts, or templates you built.</p>
     </div>
   </section>
 
@@ -94,45 +91,25 @@
   <section id="figure">
     <h2>Figure</h2>
     <figure>
-      <!-- Replace src with your exported map or chart image, e.g. images/project-1-map.png -->
-      <img src="[ADD]" alt="[ADD] describe what this figure shows">
-      <figcaption><span class="add">[ADD]</span> figure caption: what the reader is looking at,
-        the data shown, and the source.</figcaption>
+      <img src="Screenshot 2026-10-21 184235.png" alt="3D topographic map of Hawaii's Big Island showing volcanoes Kohala, Mauna Kea, Hualalai, Mauna Loa, and Kilauea labeled">
+      <figcaption><span class="add">A 3D topographic map of Hawaii's Big Island shows major volcanoes labeled (Kohala, Mauna Kea, Hualalai, Mauna Loa, and Kilauea).</span></figcaption>
     </figure>
-    <p class="note">No figure image was supplied, so the <code>src</code> and <code>alt</code>
-    attributes above are placeholders. Delete this section if you would rather rely on the
-    StoryMap and the interactive map.</p>
   </section>
 
-  <section id="map-section" hidden>
+  <section id="map-section">
     <h2>Interactive map</h2>
-    <div id="map" class="map"></div>
+    <div id="map" class="map" style="height: 400px;"></div>
     <p class="note">Basemap tiles &copy; Esri — World Topographic Map.</p>
-  </section>
-
-  <section id="map-missing">
-    <h2>Interactive map</h2>
-    <div class="card">
-      <p><span class="add">[ADD]</span> map data. No coordinates were included in your material, so
-      this map has no points yet. Open this file, find the <code>MAP_POINTS</code> array near the
-      bottom, and add one entry per location:</p>
-      <p class="note"><code>{ name: "Site name", lat: 30.6188, lon: -96.3365, note: "Short popup text" }</code></p>
-      <p class="note">Latitude and longitude must be in decimal degrees (WGS 84). Once at least one
-      point is present, the map appears automatically with a popup on each marker and this message
-      disappears. The example coordinates above are only a format illustration — replace them with
-      your own.</p>
-    </div>
   </section>
 
   <section id="findings">
     <h2>What I found</h2>
     <div class="card">
-      <p><span class="add">[ADD]</span> Your results. State what the analysis showed, including any
-      specific numbers, patterns, or areas identified. Avoid claiming more than the data supports.</p>
+      <p><span class="add">It was found that households with lower and median incomes tend to be more at risk of lava flow hazard, as they are spatially further away from shelters and escape routes.</span></p>
       <ul>
-        <li><span class="add">[ADD]</span> finding one</li>
-        <li><span class="add">[ADD]</span> finding two</li>
-        <li><span class="add">[ADD]</span> finding three</li>
+        <li><span class="add">Median-income households are often located in higher lava flow risk zones.</span></li>
+        <li><span class="add">Lower-income communities face greater vulnerability due to increased distance from emergency shelters.</span></li>
+        <li><span class="add">Spatial access to primary escape routes correlates with community income levels across Hawaii County.</span></li>
       </ul>
     </div>
   </section>
@@ -140,8 +117,7 @@
   <section id="differently">
     <h2>What I would do differently</h2>
     <div class="card">
-      <p><span class="add">[ADD]</span> Honest reflection: a limitation of the data, a method you would
-      change, a step you would automate, or something you would add with more time.</p>
+      <p><span class="add">Next time, the study area should be expanded to include ALL Hawaiian islands to get a better look at the relationship.</span></p>
     </div>
   </section>
 
@@ -162,7 +138,25 @@
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
-/* ------------------------------------------------------------------
-   MAP DATA — add your points here.
-   One object per location:
-     { name: "Label", lat: 00.0000, lon: -
+  const MAP_POINTS = [
+    { name: "Kīlauea Volcano", lat: 19.4069, lon: -155.2834, note: "Active shield volcano with frequent lava flow hazard." },
+    { name: "Mauna Loa", lat: 19.4721, lon: -155.5922, note: "Massive active shield volcano on Hawaii's Big Island." },
+    { name: "Hualālai", lat: 19.6900, lon: -155.8700, note: "Active volcano on the western coast of Hawaii Island." },
+    { name: "Mauna Kea", lat: 19.8207, lon: -155.4681, note: "Dormant volcano forming the highest peak in Hawaii." },
+    { name: "Kohala", lat: 20.0867, lon: -155.7181, note: "Oldest of the five volcanoes forming the Big Island." }
+  ];
+
+  const map = L.map('map').setView([19.6, -155.5], 9);
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Tiles &copy; Esri'
+  }).addTo(map);
+
+  MAP_POINTS.forEach(point => {
+    L.marker([point.lat, point.lon])
+      .addTo(map)
+      .bindPopup(`<b>${point.name}</b><br>${point.note}`);
+  });
+</script>
+
+</body>
+</html>
