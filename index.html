@@ -28,22 +28,32 @@
 
 <main id="main" class="wrap">
 
+  <section id="hero-canvas-container">
+    <canvas id="geoCanvas"></canvas>
+    <div class="hero-text-overlay">
+      <h2>Interactive Geospatial Mesh</h2>
+      <p style="color: var(--muted); margin: 0 0 12px; max-width: 500px;">
+        Visualizing data connections, spatial infrastructure, and utility networks.
+      </p>
+      <a class="btn" href="projects.html">Explore My Projects &rarr;</a>
+    </div>
+  </section>
+
   <section id="intro">
     <h2>Welcome</h2>
     <div class="card">
       <p>I am a graduating GIST student at Texas A&amp;M University. I have skills in ArcGIS Enterprise, ENVI,
-      geodatabases, and more. Skills include utility network management, template creation, and more.</p>
+      geodatabases, and utility network management. Experience includes template creation, database administration, and technical project deliverables.</p>
       <p class="card-meta">College Station, TX</p>
-      <p><a class="btn" href="projects.html">View my projects</a></p>
     </div>
   </section>
 
   <section id="featured">
     <h2>Featured project</h2>
     <div class="card featured">
-      <h3>Project 1 — <span class="add">Median Household Income and its Association with Lava Flow Hazard in Hawaii</span></h3>
-      <p class="card-meta"><span class="add">Data from ArcGIS Online (Hawaii Lava Flow Hazard Zones), 2020 to Present</span></p>
-      <p><span class="add">This project attempts to discover a relationship between lower median household income in Hawaii and susceptibility to lava hazards. It was found that households with lower incomes tend to be more at risk of lava flow hazard, as they are spatially further away from shelters and escape routes.</span></p>
+      <h3>Project 1 — Median Household Income and its Association with Lava Flow Hazard in Hawaii</h3>
+      <p class="card-meta">Data from ArcGIS Online (Hawaii Lava Flow Hazard Zones) &middot; May 2026</p>
+      <p>This project attempts to discover a relationship between lower median household income in Hawaii and susceptibility to lava hazards. It was found that households with lower incomes tend to be more at risk of lava flow hazard, as they are spatially further away from shelters and escape routes.</p>
       <p>
         <a class="more" href="project-1.html">Read the full project page &rarr;</a>
       </p>
@@ -80,7 +90,7 @@
         <li>JIRA</li>
         <li>SharePoint</li>
       </ul>
-      <p><a href="resume.html">See full resume &rarr;</a></p>
+      <p style="margin-top: 14px;"><a href="resume.html">See full resume &rarr;</a></p>
     </div>
   </section>
 
@@ -90,6 +100,95 @@
   <p>Avery Carlyle &middot; College Station, TX &middot;
     <a href="mailto:ac0923@tamu.edu">ac0923@tamu.edu</a></p>
 </footer>
+
+<script>
+  /* Interactive Geospatial Node Network Animation */
+  const canvas = document.getElementById('geoCanvas');
+  const ctx = canvas.getContext('2d');
+
+  function resizeCanvas() {
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+  }
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+
+  const nodes = [];
+  const nodeCount = 35;
+  const maxDistance = 110;
+  let mouse = { x: null, y: null };
+
+  canvas.parentElement.addEventListener('mousemove', (e) => {
+    const rect = canvas.getBoundingClientRect();
+    mouse.x = e.clientX - rect.left;
+    mouse.y = e.clientY - rect.top;
+  });
+
+  canvas.parentElement.addEventListener('mouseleave', () => {
+    mouse.x = null;
+    mouse.y = null;
+  });
+
+  for (let i = 0; i < nodeCount; i++) {
+    nodes.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      vx: (Math.random() - 0.5) * 0.8,
+      vy: (Math.random() - 0.5) * 0.8,
+      radius: Math.random() * 2 + 1.5
+    });
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    for (let i = 0; i < nodes.length; i++) {
+      let n = nodes[i];
+      n.x += n.vx;
+      n.y += n.vy;
+
+      if (n.x < 0 || n.x > canvas.width) n.vx *= -1;
+      if (n.y < 0 || n.y > canvas.height) n.vy *= -1;
+
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, n.radius, 0, Math.PI * 2);
+      ctx.fillStyle = '#00f2fe';
+      ctx.fill();
+
+      for (let j = i + 1; j < nodes.length; j++) {
+        let n2 = nodes[j];
+        let dx = n.x - n2.x;
+        let dy = n.y - n2.y;
+        let dist = Math.sqrt(dx * dx + dy * dy);
+
+        if (dist < maxDistance) {
+          ctx.beginPath();
+          ctx.moveTo(n.x, n.y);
+          ctx.lineTo(n2.x, n2.y);
+          ctx.strokeStyle = `rgba(0, 242, 254, ${1 - dist / maxDistance})`;
+          ctx.lineWidth = 0.6;
+          ctx.stroke();
+        }
+      }
+
+      if (mouse.x !== null && mouse.y !== null) {
+        let mdx = n.x - mouse.x;
+        let mdy = n.y - mouse.y;
+        let mdist = Math.sqrt(mdx * mdx + mdy * mdy);
+        if (mdist < 130) {
+          ctx.beginPath();
+          ctx.moveTo(n.x, n.y);
+          ctx.lineTo(mouse.x, mouse.y);
+          ctx.strokeStyle = `rgba(56, 239, 125, ${1 - mdist / 130})`;
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
+      }
+    }
+    requestAnimationFrame(animate);
+  }
+  animate();
+</script>
 
 </body>
 </html>
